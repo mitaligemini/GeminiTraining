@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template Driven Form</title>
+</head>
+<body>
+    <h2 class="text-center "><u> Template Driven Forms</u></h2>
+    <h3 class="mb-3 text-center pt-3">Registration Form</h3>
+    <div class="p-5" style="background-color: aquamarine;">
+        
+        <form  #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+
+            <div class="mb-1 form-group row">
+                <label class="form-label col-sm-4" for="name">Name : </label>
+                <div class="col-sm-6"> 
+                    <input required type="text"  id="name" name="name" class="form-control" [(ngModel)]="name" ngModel minlength="3" maxlength="10"/></div>
+
+            </div>
+
+            <div class="mb-1 form-group row">
+                <label class="form-label  col-sm-4" for="college">College Name : </label>
+                <div class="col-sm-6">
+                    <input type="text" id="college" name="college" class="form-control" required [(ngModel)]="college" ngModel>
+                </div>
+            </div>
+
+            <div class="mb-1 form-group row">
+                <label class="form-label  col-sm-4" for="cgpa">CGPA : </label>
+                <div class="col-sm-6">
+                    <input type="number" id="cgpa" name="cgpa" class="form-control" max="10" required ngModel>
+                </div>
+            </div>
+            <div class="mb-1 form-group row">
+                <label class="form-label  col-sm-4" for="joiningDate">Date of Joining : </label>
+                <div class="col-sm-6">
+                    <input type="date" id="joiningDate" name="joiningDate" class="form-control" required ngModel>
+                </div>
+            </div>
+            <div class="mb-1 form-group row ">
+                <label class="form-label  col-sm-4" for="gdate">Year of Passing : </label>
+                <div class="col-sm-6"> 
+                    <input type="date" id="gdate" name="gdate" class="form-control" required ngModel></div>
+            </div>
+            <div class="mb-1 form-group row">
+                <label class="form-label  col-sm-4" for="skills">Skills :</label>
+                <div class="col-sm-6"> 
+                    <input type="text" id="skills" name="skills" class="form-control" required ngModel />
+                </div>
+            </div>
+            <div class=" mb-1 form-group row  ">
+                <label for="file" class="form-label col-sm-4 ">Upload Resume :</label>
+                <div class="col-sm-6">
+                    <input class="form-control form-control-sm" required id="file" name="file" type="file" ngModel>
+                </div>
+            </div>
+
+            <p class=" pt-3">
+                <button type="submit" [disabled]="myForm.invalid">Submit</button>
+                <button type="reset">Reset</button>
+            </p>
+
+        </form>
+    </div>
+
+    <div class=" mt-5 mt-md-0 mb-3">
+        <div class="card px-3 table-responsive">
+          <h1 class=" mb-3 text-center" style="text-decoration: underline;" >Table</h1>
+          <table
+            class="table table-bordered border border-3 table-striped bg-light"
+          >
+            <thead class="table-dark border-success">
+              <tr>
+                <th scope="col">Sno.</th>
+                <th scope="col">Name</th>
+                <th scope="col">College Name</th>
+                <th scope="col">CGPA</th>
+                <th scope="col">Joining Date</th>
+                <th scope="col">Passing Year</th>
+                <th scope="col">Skills</th>
+                <th scope="col">Resume Path</th>
+              </tr>
+            </thead>
+            <tbody class="table-body" id="table-body1"></tbody>
+          </table>
+        </div>
+      </div>
+
+</body>
+
+</html>

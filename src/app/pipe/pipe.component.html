@@ -1,0 +1,24 @@
+<p>Pipes Examples</p>
+
+<h2> {{text | titlecase}} </h2>
+
+<p> {{text | slice:3:5}} </p>
+
+<p>{{number | number:'2.4-5'}}</p>    
+<!--  here it means on left side of decimal there will only 2 values-->
+<!-- and right side of decimal there will only minimum 4 value and maximum 5 value -->
+<!-- chahe no. kitna bhi bda kyu na ho -->
+
+<p>{{percent | percent}}</p>
+
+<p>{{amount | currency:'INR':'code'}}</p>
+
+<p>{{date| date }}</p>
+<p>{{date| date : 'short'}}</p>
+<p>{{date| date : 'shortDate'}}</p>
+<p>{{date| date : 'dd-MM-yyyy'}}</p>
+<p>{{date| date : 'hh:mm:ss'}}</p> <!-- In 12 hour format -->
+<p>{{date| date : 'HH:mm:ss'}}</p> <!-- In 24 hour format -->
+<p>{{date| date : 'HH:mm:ss a'}}</p> <!-- a for AM OR PM -->
+<p>{{dob | customPipe}}</p>
+

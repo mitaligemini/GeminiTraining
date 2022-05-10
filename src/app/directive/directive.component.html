@@ -1,0 +1,21 @@
+<div>
+<span>{{names}}</span>
+
+<ul *ngIf="names.length > 0">
+    <li *ngFor="let item of names;index as i">{{i}} --> {{item}}
+        <button (click)="removeDetails(i)">Remove Details </button>
+    </li>   <!-- for loop on array names -->
+    
+</ul>
+<div [hidden]="names.length >0 ">No records found</div>             <!-- *ngIf="names.length === 0"-->
+
+<button (click)="addDetails()" class="btn btn-primary">Add details</button>
+
+
+<h2 [ngClass]=" isBlue ? 'blue' : 'green' "> Attributes directives</h2>
+<button (click)="changeColor()">Change Color</button>
+
+<h2 appAddBackground>Custom Attributes</h2>
+
+
+</div>

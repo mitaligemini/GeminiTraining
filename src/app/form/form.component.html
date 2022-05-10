@@ -1,0 +1,24 @@
+<div class="container fluid " >
+    <div *ngIf="hide">
+    <form>
+            <div class="form-group ">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
+                    placeholder="Enter email" [(ngModel)]="studentDetails.email" 
+                    [ngModelOptions]="{standalone: true}"/>
+            </div>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" placeholder="name"
+                [(ngModel)]="studentDetails.name"
+                [ngModelOptions]="{standalone: true}"
+                
+                />
+            </div>
+            <button type="submit" (click)="saveDetails()" class="btn btn-secondary">Submit</button>
+       
+    </form>
+    </div>
+
+    <app-details [data]="studentDetails" (childId)="receiveEvent($event)"></app-details>
+</div>
