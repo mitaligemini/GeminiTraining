@@ -16,7 +16,9 @@ import { TemplateDrivenComponent } from './template-driven/template-driven.compo
 import { NewComponent } from './new/new.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { ReactiveSignupComponent } from './reactive-signup/reactive-signup.component';
-import { RouterModule } from '@angular/router'
+import { RouterModule } from '@angular/router';
+import { ObservableComponent } from './observable/observable.component';
+import {HttpClientModule} from '@angular/common/http';
 
 
 
@@ -34,12 +36,14 @@ import { RouterModule } from '@angular/router'
     TemplateDrivenComponent,
     NewComponent,
     ReactiveFormComponent,
-    ReactiveSignupComponent
+    ReactiveSignupComponent,
+    ObservableComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
   
       
   ],
